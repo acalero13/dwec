@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel, Tijeras, Lagarto y Spock</title>
+</head>
+<body>
+
+    <!--1.1. Crea una funció en javascript anomenada buscarEleccion() que busqui
+    paraules dins un text. La funció hauria de ser capaç de trobar les paraules
+    i indicar en quina posició comencen:
+        - a. Papel   b.Piedra  c.Tijeras  d.Lagarto  e.Spock
+    Quan trobi una de les anteriors paraules, haurà d'indicar a quina posició està-->
+    <script>
+        let palabras =["Papel", "Piedra", "Tijeras", "Lagarto", "Spock"];
+        let frase = prompt("Introduce una frase");
+
+        function buscarEleccion() {
+            if(palabras != frase) {
+              document.write("muestra" + frase);
+              console.log(typeof + frase);
+              
+            } else if(frase == palabras) {
+
+            } else {
+                console.log("error");
+            }
+            
+        }
+    </script>
+</body>
+</html>

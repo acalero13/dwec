@@ -1,0 +1,12 @@
+fieldset {
+    background-color: rgb(159, 159, 207);
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: bold;
+}
+input {
+    background-color: rgb(18, 38, 39);
+    color: white;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}

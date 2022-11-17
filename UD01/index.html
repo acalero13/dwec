@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+       <!-- <title>DWEC - UD01 - Integració</title> -->
+        <title>DWEC - UD01 - Modificar el contingut del codi HTML</title>
+       <!-- <script src="js/funciones.js"></script> -->
+
+
+    </head>
+    <body>
+    <!-- <script> mensaje(); </scrip> -->
+    <!-- <p onclick="console.log('pau');">Mensaje de prueba</p> -->
+    <h1>Modificando el código HTML</h1>
+
+    <!-- <p id="prueba">Modificando imagenes</p>
+
+        <img id="miImagen" src="img/gato.jpg" onclick="cambiarImagen();" width="400" height="400">
+        
+        <script>
+            function cambiarImagen() {
+            let imagen = document.getElementById("miImagen");
+            if(imagen.src.match('gato')) {
+                imagen.src = "img/gato.jpg";
+            } else {
+                imagen.src = "img/gato.jpg";
+            }
+        }
+        </script>
+    -->
+        <p id="miTexto">Texto nuevo</p>
+        <button type="button" onclick="miEstilo();">Modificar</button>
+
+        <script>
+            function miEstilo() {
+                let miTexto = document.getElementById("miTexto");
+                miTexto.style.fontSize = "25px";
+                //miTexto.style.color = "pink";
+                //miTexto.style.background = "black";
+                //miTexto = document.getElementById("miTexto").innerHTML= "Texto nuevo";
+                //console.log("Mensaje recibido");
+                
+                if(miTexto.textContent.match("Texto nuevo")) {
+                    miTexto.style.fontSize = "50px";
+                    miTexto.style.color = "blue";
+                    miTexto.style.background = "grey";
+                    document.getElementById("miTexto").innerHTML= 'Prueba';
+                    console.log("Mensaje recibido");
+                } else {
+                    miTexto.style.fontSize = "25px";
+                    miTexto.style.color = "pink";
+                    miTexto.style.background = "black";
+                    console.log("Error");
+                }
+            }
+
+
+            
+
+        </script>
+        <noscript>
+            <p> POR FAVOR, ACTIVE JAVASCRIPT</p>
+        </noscript>
+    
+    
+
+    </body>
+</html>

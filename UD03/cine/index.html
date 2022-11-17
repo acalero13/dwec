@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Cine</title>
+</head>
+<body>
+ 
+  <div class="contenidor-pelicula">
+    <label>Elige una pelicula</label>
+    <select id="pelicula">
+        <option value="10">Sleepy Hollow (10€)</option>
+        <option value="12">La novia cadáver (12€)</option>
+        <option value="8">Pesadilla antes de Navidad (8€)</option>
+        <option value="9">Beetlejuice (9€)</option>
+    </select>
+  </div>
+  <ul class="llegenda">
+    <li>
+        <div class="seient"></div>
+        <small>N/A</small>
+    </li>
+    <li>
+        <div class="seient seleccionat"></div>
+        <small>Seleccionar</small>
+    </li>
+    <li> 
+        <div class="seient ocupat"></div>
+        <small>Ocupado</small>
+    </li>
+  </ul>
+    <div class="contenidor">
+        <div class="pantalla"></div>
+        <div class="fila">
+            <div class="seient"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+            <div class="seient ocupat"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+            <div class="seient ocupat"></div>
+            <div class="seient"></div>
+        </div>
+        <div class="fila">
+            <div class="seient"></div>
+            <div class="seient"></div>
+            <div class="seient ocupat"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+            <div class="seient ocupat"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+        </div>
+        <div class="fila">
+            <div class="seient"></div>
+            <div class="seient ocupat"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+        </div>
+        <div class="fila">
+            <div class="seient"></div>
+            <div class="seient"></div>
+            <div class="seient ocupat"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+        </div>
+        <div class="fila">
+            <div class="seient"></div>
+            <div class="seient ocupat"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+        </div>
+        <div class="fila">
+            <div class="seient"></div>
+            <div class="seient"></div>
+            <div class="seient ocupat"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+            <div class="seient"></div>
+        </div>
+    </div>
+    <p class="text">Ha seleccionado <span id="contador">0</span> Asientos por un precio de <span id="total">0</span>€</p>
+    <script src="script.js"></script>
+</body>
+</html>

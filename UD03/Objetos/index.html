@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+<body>
+    <h3>Objetos</h3>
+    <script src="script.js">
+        let coche = {
+            marca: "Ford",
+            modelo: "Mondeo",
+            color: "rojo",
+            puertas: 5,
+            kms: 120000,
+            automatico: false
+        };
+
+        let coche2 = new Object();
+        coche2.marca = "Opel";
+        coche2.modelo = "Corsa";
+        coche2.color = "Gris";
+        coche2.puertas = 3;
+        coche2.kms = 45000;
+        coche2.automatico = true;
+
+        for(campo in coche){
+            console.log(campo +": "+coche[campo])
+        }
+
+    </script>
+</body>
+</html>

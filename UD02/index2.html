@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>Reglas</title>
+        
+        <script>
+            //var s = "hola";
+
+            //var x = 23;
+
+            //var pi = 3.14;
+
+            //alert(pi);
+
+            //var s1 = "dobles"; 
+
+           /* let s3 = "paquito";
+            const s4 = "pau";  */
+           // var s2 = 'simples';
+
+            //alert(s1); alert(s2);
+            //alert(s3); alert(s4);
+
+
+            //var z = 30;
+            //delete z;
+            //console.log(typeof(z));
+
+            //console.log("Entero: " + parseInt("9.99"));
+
+
+            //var fecha = new Date();
+            //var fechaCadena = fecha.toDateString();
+            //var fechaCadena = fecha.toUTCString();
+
+            //console.log(fechaCadena);
+            
+            //Funciones
+           
+            /*var perro = { raza: "Podenco", peso: 12, altura:58, color: "negro"};
+
+            perro.raza;
+            perro["raza"];
+            console.log(perro);
+
+            var persona = {nombre: "Paco", edad: 35, altura: 1.80, peso: 70};
+            console.log("Datos del individuo: " + persona.nombre + " edad: " + persona.edad + " altura: " + persona.altura + " peso: " + persona.peso);
+            console.log(persona);
+
+            persona.devuelvePeso = function() { return this.peso};  */
+
+            /*var a; //variable global
+            a = 10;
+
+            function suma() {
+                var b = 5;
+                c = 20;
+                //console.log(c);
+                return a+b;
+            }
+
+            console.log(suma());
+            console.log(c);
+            */
+        </script>
+
+        <script>
+            /*alert("Mi carro \t me lo robaron\n");
+
+            let numero = 123;
+            let cadena = (456/2).toString();
+            alert(typeof(numero));
+            alert(typeof(cadena));
+
+            let decimal = 9.99;
+            alert(typeof(numero.toPrecision(2)));
+
+            let numero2 = Number(true);
+            alert(numero2); */
+
+        </script>
+
+    </head>
+    <body>
+    
+        <p class="nombre" id=""></p>
+        <p id="fecha"></p>
+        <p id="arrays"></p>      <!--id del array-->
+
+        <script>
+            //document.getElementById("fecha").innerHTML = Date();
+
+
+            //let fecha = new Date();
+            //let fecha2 = new Date(44444444);
+            //let fecha3 = new Date(2022, 10, 4, 16, 02, 33, 23);
+
+            //alert(fecha);
+            //alert(fecha2);
+            //alert(fecha3);
+             
+            //Tener en cuenta como se ponen las fechas.
+
+            let dias = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"];
+            console.log(dias.length);
+            document.getElementById("arrays").innerHTML = dias;      //muestra por pantalla el contenido del array.
+            
+            for(i=0; i < dias.length;i++) {
+                console.log(dias[i]);
+            }
+
+            let nombres = ["Ana", "Pau", "Simon"];
+            console.log(nombres.length);
+            nombres.forEach(element => {
+                console.log(element);
+            });
+
+            document.getElementById("arrays").innerHTML = nombres;
+            nombres.forEach(provaRecorrerArray);
+
+            function provaRecorrerArray (valor, index, array) {
+                //console.log(valor);
+                //console.log(array);
+                console.log(index);
+            }
+
+
+        </script>
+
+
+
+    </body>
+</html>

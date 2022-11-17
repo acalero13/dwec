@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2.1</title>
+</head>
+<body>
+    
+   <!-- <h2> 1. Crea un programa en el que creis 5 variables numericas (entero, decimal, 
+        cientifico, octal y hexadecimal) </h2>
+    <p id = "entero1"></p>
+    <p id = "decimal1"></p>
+    <p id = "cientifico1"></p>
+    <p id = "octal1"></p>
+    <p id = "hexadecimal1"></p>
+    <script>
+
+        let entero = 4;
+        let decimal = 4.2;
+        let cientifico = 4e7;
+        let octal = 0040;
+        let hexadecimal = 0xb273;
+
+        
+        document.getElementById("entero1").innerHTML = entero; 
+        document.getElementById("decimal1").innerHTML = decimal; 
+        document.getElementById("cientifico1").innerHTML = cientifico;
+        document.getElementById("octal1").innerHTML = octal;
+        document.getElementById("hexadecimal1").innerHTML = hexadecimal
+    
+    </script>
+-->
+
+      <!--  <script>
+
+            /*<h2>Autor: Ana S. Martínez Calero</h2>
+
+            <h2>2.Crea un programa que crei 4 variables de tipus cadena amb el següents valors, "hola", "7", "13" i "adeu"</h2>*/
+
+            let saludo = "Hola";
+            let num1 = "7";
+            let num2 = "13";
+            let despedida = "Adeu";
+               
+            console.log(saludo + '\'Joan\'');  a.
+
+            console.log(saludo +"\n" + despedida); 
+
+            console.log(num1 + num2); 
+
+            console.log(saludo + num1 + num2 + despedida);
+        </script> -->
+        
+      <!--  <script>
+        /*<h2>Crea un programa que demani a l'usuari que introdueixi una edat i
+             mostri el següent missatge (alert o console.log) en funció del número introduït.</h2>
+             Ana S. Martínez Calero*/
+        
+        let respuesta = prompt("Inserta una edad: ");
+
+        console.log(typeof(respuesta)); //recoge la información en String
+
+        if(respuesta>=0 && respuesta<=12){
+            alert("Niño");
+            //console.log("Niño");      //COMPROBAR COMO SALE EL RESULTADO POR CONSOLA
+        } else if(respuesta>=13 && respuesta<=26) {
+            alert("Joven");
+        } else if(respuesta>26 && respuesta<=60) {
+            alert("Adulto");
+        } else if (respuesta> 60 && respuesta<=99) {
+            alert("Jubilado");
+        }
+        </script>
+
+    -->
+
+   <!-- <h2> 4. Crea un programa que generi una llista d'hores que vagin des de les 
+    9 fins les 21:30 de 30 min en 30 min.
+    Utilitza la següent instrucció:
+    document.write("Missatge") </h2> -->
+    <script>
+        
+        //Ana S. Martínez Calero
+       
+        let hora = 9;
+        let condicion = true;
+     
+        for(let i = 0; i <= 24; i++) {
+            if(i){ 
+                if(condicion){
+                    //console.log(hora + ':30');
+                    document.write(hora + ':30' + '<br>');
+                    condicion = false;
+
+                     continue;
+                } 
+                hora++;
+                condicion = true;
+            }
+            document.write(hora + ':00' + '<br>');
+        }
+    </script>  
+
+ <!--   <script>
+      //  <h2>5. Crea un control parental per a que no es pugui entrar en una página.</h2>
+        
+      let respuesta = prompt("¿Cual es tu planta favorita? ");
+
+      while(respuesta != "Carnivora") {
+        respuesta = prompt("¿Cual es tu planta favorita? ");
+        alert("\nCorrecto");      //te indica que es la respuesta es correcta.
+        //Si no es asi, te vuelve a preguntar. 
+      }
+    </script>
+
+-->
+
+</body>
+</html>
