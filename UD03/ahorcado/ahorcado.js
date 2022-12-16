@@ -1,66 +1,110 @@
-//Array de palabras definidas.
-let palabras = [["H","o", "l","a"],
-    ["P","a","g","i","n","a"],
-    ["P","a", "c","o"],
-    ["C","a", "d","e","n", "a"],
-    ["A","n","a"]];
+//Arrays que usaremos para jugar.
+let palabras = ["lirios", "tulipan", "adelfa", "estramonio", "peyote", "cicuta", "aconito", "belladona", "azalea", "ficus", "hormiga", "mariposa", "avispa", "escarabajo", "escorpion", "araña",
+    "libelula", "mantis", "abeja", "saltamontes", "cuarzo", "fluorita", "calcita", "malaquita", "diamante", "granate", "agata", "turquesa", "labrodita", "topacio"];
 
 //Palabra que averiguar.
 let palabra = "";
-//Variable para comparar.
-let comparar=["_","_","_","_"];
 //Numero de vidas.
 let ahorcado = 5;
-//Guarda el historial.
-let historial = "";
 
 var hueco = document.getElementById("palabra");
 
-// Contador de intentos
+//Contador de intentos
 var cont = 5;
-// Botones de letras.
+//Botones de letras.
 var buttons = document.getElementsByClassName('letra');
-// Botón de reiniciar.
+//Botón de reiniciar.
 var btnInicio = document.getElementById("reiniciar");
+let palabraUsuario = [palabra.length];
 
-palabra = palabras[Math.floor(Math.random()*palabras.length)];
+//Genera palabra aleatoria
+palabra = palabras[Math.floor(Math.random() * palabras.length)];
+
+//Genera guiones en funcion de la longitud de la palabra
+generarGuion(palabra);
+
+//Juego terminado
+const GAME_IS_OVER = false;
 
 
+//Variable que penaliza cada 10 seg
+ let interval = setInterval(() => {
+   cont -= 1;
+    console.log('Vidas restantes : ${cont}');
+   if (cont === 0) {
+      //cuando las vidas llegan a 0 el juego termina
+      clearInterval(interval);
+        return alert("Te quedaste sin vidas perdiste el juego D:");
+   }
+ }, 10000);
 
-while((comparar.includes("_") && ahorcado!=0)) {
-    let letra = prompt("Escribe una letra: ");
-    let guardar = document.getElementById(letra);
-    let extra = false;
 
-    if(letra.length==1) {
-        for(let i = 0; i <palabra.length; i++) {
-            if(palabra[i]==letra) {
-                comparar[i] == letra;
-                extra = true;
-            }
-        }
-
-        if(extra==false) {
-            ahorcado--;
-            historial+=letra + ", ";
-        }
-        if(ahorcado!=0) alert(comparar.join()+"\nTe quedan "+ ahorcado +" vidas.\n"+"Letras usadas: " + historial);
-    } else {
-        
-        if(letra.split("")!=palabra.join()) {
-            ahorcado--;
-            historial += letra + ", ";
-        } else {
-            for(let x = 0; x < comparar.length; x++) {
-                comparar[x] = letra.split("")[x];
-            }
+//Devuelve true o false si la letra existe dentro la palabra. 
+function buscarPalabra(wordtoSearch, word) {
+    let charArray = wordtoSearch.split('');     //Separa las palabras en un array de caracteres.
+    let posArray = [];  //Array vacio para guardar las posiciones de las letras encontradas.
+  
+    let contador = 0;   //Contador para saber cuantas letras ha encontrado.
+    //Variable que guarda la palabra del usuario;
+    //console.log(charArray); 
+    for (let index = 0; index < charArray.length; index++) {
+        if (charArray[index] === word) {
+            posArray.push(index);
+            palabraUsuario[index] = word;
+            contador++;
         }
     }
-}
-if(!comparar.includes("_")) {
-    document.write("Has ganado. ");
-}
-if(ahorcado==0) {
-    document.write("Has perdido. ");
+    return contador > 0 ? posArray : false;
 }
 
+//Recibe la letra enviada en el evento onclick
+function enviado(letra) {
+    let guardar = document.getElementById('letra');
+    //console.log(guardar);
+    guardar.value += letra;
+    //console.log(letra);
+    console.log(palabra);
+    //console.log(guardar.value);
+    let resultadoBusqueda = buscarPalabra(palabra, letra);
+
+    //@PalabraUsuario char array.
+    //transfroma el array en cadena para compararlo.
+    //@palabra.split() convierte la cadena en un array de character.
+    //toLocaleString convierte array a una string
+    if (palabraUsuario.toLocaleString() === palabra.split('').toLocaleString()) {
+        console.log('juego terminado');
+        alert("Has Ganador!!!!!!");
+        //Refresca la ventana.
+        location.reload();
+    }
+    console.log(resultadoBusqueda);
+
+    if (resultadoBusqueda.length > 0) {         //Si el resultado es un array comprueba que la longitud sea 0.
+        for (let index = 0; index < resultadoBusqueda.length; index++) {
+            let letraEncontrada = document.getElementById(resultadoBusqueda[index]);
+            letraEncontrada.innerHTML = `<h1>${letra.toUpperCase()}</h1> `;
+        }
+    }
+    //Si no quita una vida.
+    else {
+        cont -= 1;
+        if (cont === 0) {
+            alert("Has perdido !!!");
+            //Refresca la ventana.
+            location.reload();
+        };
+    }
+}
+
+//Genera guiones en funcion de la longitud de la palabra.
+
+function generarGuion(palabra) {
+    let contenedorGuiones = document.getElementById('palabraLength');
+    //console.log(contenedorGuiones);
+    for (let index = 0; index < palabra.length; index++) {
+        let guion = document.createElement('span');
+        guion.setAttribute('id', index.toString());
+        guion.innerText = " ______ ";
+        contenedorGuiones.appendChild(guion);
+    }
+}
